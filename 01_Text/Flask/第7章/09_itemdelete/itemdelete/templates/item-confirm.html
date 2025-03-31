@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>商品データ削除</title>
+</head>
+
+<body>
+    <h2>削除内容確認</h2>
+
+    <!-- 商品削除の確認フォーム -->
+    <form action="/items/delete" method="post">
+        <input type="hidden" name="id" value="{{ item.id }}"> <!-- 商品IDを隠しフィールドとして送信 -->
+
+        <p>商品ID: <span>{{ item.id }}</span></p> <!-- 商品IDを表示 -->
+        <p>商品名: <span>{{ item.name }}</span></p> <!-- 商品名を表示 -->
+        <p>単価: <span>{{ item.price }}</span></p> <!-- 商品の単価を表示 -->
+
+        <!-- 削除ボタン -->
+        <button type="submit">削除</button>
+    </form>
+
+    <!-- 商品一覧ページへ戻るリンク -->
+    <p><a href="/items">キャンセル</a></p>
+</body>
+
+</html>

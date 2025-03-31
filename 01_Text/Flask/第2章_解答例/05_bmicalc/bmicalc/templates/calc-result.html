@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <!-- ページのタイトル（ブラウザのタブに表示される名前）を指定 -->
+    <title>計算結果</title>
+    </head>
+    <body>
+        <!-- ページの見出し -->
+        <h1>計算結果</h1>
+        
+        <!-- BMI計算結果を表示。{{ result | round(2) }}で計算結果を小数点2桁に丸めて表示 -->
+        あなたのBMIは {{ result | round(2) }} です！
+        <br>
+        <br>
+        <!-- 入力画面に戻るためのリンク。url_for関数で'input'という名前のルートへのURLを生成 -->
+        <a href="{{ url_for('input') }}">戻る</a>
+    </body>
+</html>

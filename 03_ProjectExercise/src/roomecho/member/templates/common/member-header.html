@@ -1,0 +1,25 @@
+<!-- ヘッダー -->
+<header class="header">
+    <div class="container header-container">
+        <!-- ロゴ画像 -->
+        <div class="header-logo">
+            <!-- メニューページへのリンク -->
+            <a href="{{ url_for('member.menu') }}">
+                <!-- ロゴ画像を表示 -->
+                <img src="{{ url_for('static', filename='images/RoomEchoLogo.png') }}" alt="ロゴ" class="header-logo-img">
+            </a>
+        </div>
+        
+        <!-- ログイン中の会員の氏名 -->
+        <div class="login-user">
+            <!-- セッションから会員名を取得して表示 -->
+            <span>{{ session["member_name"] }} 様</span>
+        </div>
+        
+        <!-- ログアウトボタン -->
+        <div class="header-button">
+            <!-- ログアウトページへのリンク -->
+            <a class="btn btn-logout btn-dark" href="{{ url_for('member.logout') }}">ログアウト</a>
+        </div>
+    </div>
+</header>

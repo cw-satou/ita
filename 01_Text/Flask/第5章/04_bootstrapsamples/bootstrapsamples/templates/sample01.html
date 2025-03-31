@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- レスポンシブデザインのためのビューポート設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グリッドシステム</title>
+    <!-- Bootstrapのスタイルシートを読み込み -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<p>
+    <!-- container: コンテンツを中央に配置し、左右に余白を作るコンテナ -->
+    <div class="container">
+        <!-- row: グリッドシステムの行を作成 -->
+        <div class="row">
+            <!-- col-sm-12: 小型デバイス以上で12列分（全幅）を占める -->
+            <div class="col-sm-12"><h3>グリッドシステム</h3></div>
+        </div>
+        <!-- 1行目: 各列が1/12の幅を持つ18個の列 -->
+        <div class="row">
+            <!-- col-1: 1列分（1/12）の幅を占める -->
+            <div class="col-1">列1ーカラム1 (1/12)</div>
+            <div class="col-1">列1ーカラム2 (2/12)</div>
+            <div class="col-1">列1ーカラム3 (3/12)</div>
+            <div class="col-1">列1ーカラム4 (4/12)</div>
+            <div class="col-1">列1ーカラム5 (5/12)</div>
+            <div class="col-1">列1ーカラム6 (6/12)</div>
+            <div class="col-1">列1ーカラム7 (7/12)</div>
+            <div class="col-1">列1ーカラム8 (8/12)</div>
+            <div class="col-1">列1ーカラム9 (9/12)</div>
+            <div class="col-1">列1ーカラム10 (10/12)</div>
+            <div class="col-1">列1ーカラム11 (11/12)</div>
+            <div class="col-1">列1ーカラム12 (12/12)</div>
+            <!-- 13列目以降は次の行に折り返される -->
+            <div class="col-1">列1ーカラム13 (13/12)</div>
+            <div class="col-1">列1ーカラム14 (14/12)</div>
+            <div class="col-1">列1ーカラム15 (15/12)</div>
+            <div class="col-1">列1ーカラム16 (16/12)</div>
+            <div class="col-1">列1ーカラム17 (16/12)</div>
+            <div class="col-1">列1ーカラム18 (16/12)</div>
+        </div>
+        <!-- 2行目: 3つの等幅列 -->
+        <div class="row">
+            <!-- col: 利用可能な幅を均等に分割（この場合は3等分） -->
+            <div class="col">列2ーカラム1 (4/12)</div>
+            <div class="col">列2ーカラム2 (4/12)</div>
+            <div class="col">列2ーカラム3 (4/12)</div>
+        </div>
+        <!-- 3行目: 1列のみで1/12の幅 -->
+        <div class="row">
+            <div class="col-1">列3ーカラム1 (4/12)</div>
+        </div>
+    </div>
+</p>
+</body>
+</html>

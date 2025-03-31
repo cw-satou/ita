@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ページのタイトル（ブラウザのタブに表示される名前）を指定 -->
+    <title>入力フォーム</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>数値の加算</h1>
+
+    <!-- 計算用のフォーム。送信先は/calculate、POSTメソッドで送信 -->
+    <form action="/calculate" method="post">
+        <!-- 1つ目の数値入力欄 -->
+        <div>
+            <label for="InputNum">数値1: </label>
+            <!-- テキスト入力欄。入力された値はnum1という名前で送信される -->
+            <input type="text" id="InputNum" name="num1">
+        </div>
+        <br>
+        <!-- 2つ目の数値入力欄 -->
+        <div>
+            <label for="InputNum">数値2: </label>
+            <!-- テキスト入力欄。入力された値はnum2という名前で送信される -->
+            <input type="text" id="InputNum" name="num2">
+        </div>
+        <br>
+        <!-- 3つ目の数値入力欄 -->
+        <div>
+            <label for="InputNum">数値3: </label>
+            <!-- テキスト入力欄。入力された値はnum3という名前で送信される -->
+            <input type="text" id="InputNum" name="num3">
+        </div>
+        <br>
+        <!-- クリックするとフォームの内容を送信する計算ボタン -->
+        <button type="submit">計算</button>
+    </form>
+</body>
+
+</html>

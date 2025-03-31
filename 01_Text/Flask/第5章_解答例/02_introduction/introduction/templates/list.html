@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- HTML文書の言語を日本語に設定 -->
+
+<head>
+	<!-- HTML文書のメタ情報やスタイルを定義する部分 -->
+	<meta charset="UTF-8">
+	<!-- 文字コードをUTF-8に設定 -->
+	<title>Employee List</title>
+	<!-- ページのタイトルを設定 -->
+	<style>
+		/* CSSスタイルを定義 */
+		.table th, .table td {
+			/* テーブルのセルの幅とテキストの揃えを設定 */
+			width: 100px;
+			text-align: center
+		}
+	</style>
+</head>
+
+<body>
+    <!-- HTML文書の内容を記述する部分 -->
+    <h2>社員紹介一覧</h2>
+    <!-- ページの見出しを表示 -->
+
+	<form action="{{ url_for('show_regist') }}" method="post">
+		<!-- フォームを作成し、送信先と送信方法を指定 -->
+		<table class="table" border="1">
+			<!-- テーブルを作成し、枠線を表示 -->
+			<tr>
+				<!-- テーブルの行を開始 -->
+				<th>社員番号</th>
+				<th>名前</th>
+			</tr>
+			<tr>
+				<!-- 社員番号を表示 -->
+				<td>0001</td>
+				<!-- 社員名を表示 -->
+				<td>
+					<!-- 詳細ページへのリンクを設定 -->
+					<a href="{{ url_for('static', filename='0001.html') }}">Mike</a>
+				</td>
+			</tr>
+			<tr>
+				<!-- 社員番号を表示 -->
+				<td>0002</td>
+				<!-- 社員名を表示 -->
+				<td>
+					<!-- 詳細ページへのリンクを設定 -->
+					<a href="{{ url_for('static', filename='0002.html') }}">John</a>
+				</td>
+			</tr>
+		</table>
+		<p>
+			<!-- 送信ボタンを配置 -->
+			<button type="submit">登録</button>
+		</p>
+	</form>
+
+</body>
+
+</html>

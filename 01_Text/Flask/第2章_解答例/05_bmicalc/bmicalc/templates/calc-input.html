@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <!-- ページのタイトル（ブラウザのタブに表示される名前）を指定 -->
+    <title>入力フォーム</title>
+    </head>
+    <body>
+        <!-- ページの見出し -->
+        <h1>BMIの計算</h1>
+        
+        <!-- BMI計算用のフォーム。送信先はurl_for関数で'calculate'という名前のルートへのURLを生成 -->
+        <form action="{{ url_for('calculate') }}" method="post">
+            <!-- 身長入力欄 -->
+            <div>
+                <label for="InputNum">身長（m）: </label>
+                <!-- 数値入力欄。0.01単位で入力可能。入力された値はheightという名前で送信される -->
+                <input type="number" step="0.01" id="InputNum" name="height">
+            </div>
+            <br>
+            <!-- 体重入力欄 -->
+            <div>
+                <label for="InputNum">体重（kg）: </label>
+                <!-- 数値入力欄。0.01単位で入力可能。入力された値はweightという名前で送信される -->
+                <input type="number" step="0.01" id="InputNum" name="weight">
+            </div>
+            <br>
+            <!-- クリックするとフォームの内容を送信するボタン -->
+            <button type="submit">BMIを求める</button>
+        </form>
+    </body>
+</html>

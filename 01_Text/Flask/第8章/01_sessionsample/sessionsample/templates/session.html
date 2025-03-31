@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>セッション管理</title>
+</head>
+
+<body>
+    <h2>セッション管理</h2>
+
+    <!-- セッション関連のメッセージを表示 -->
+    <p>{{ message }}</p>
+
+    <!-- セッションに名前を設定するフォーム -->
+    <form action="/setSession" method="get">
+        <!-- ユーザーが名前を入力できるフィールド -->
+        <input type="text" name="name" placeholder="名前を入力" />
+        <!-- フォーム送信ボタン -->
+        <button type="submit">Set Session</button>
+    </form>
+
+    <!-- セッションの値を取得するリンク -->
+    <a href="/getSession">Get Session</a>
+
+    <!-- セッションを無効化するリンク -->
+    <a href="/invalidateSession">Invalidate Session</a><br>
+    <!-- スペルミス修正: invaridateSession → invalidateSession -->
+
+    <!-- セッションに保存した値を直接表示 -->
+    <p>セッションに保存した値：{{ session.get('name', 'なし') }}</p>
+    <!-- セッションに 'name' がない場合は 'なし' を表示 -->
+</body>
+
+</html>

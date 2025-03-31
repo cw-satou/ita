@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<title>ユーザーデータ</title>
+</head>
+
+<body>
+	<div>
+		<h2>ユーザーデータ</h2> <!-- ユーザー情報の詳細を表示 -->
+
+		<!-- ユーザーIDの表示 -->
+		<p>ID: <span>{{ user.id }}</span></p>
+
+		<!-- ユーザー名の表示 -->
+		<p>ユーザー名: <span>{{ user.name }}</span></p>
+
+		<!-- メールアドレスの表示 -->
+		<p>メールアドレス: <span>{{ user.email }}</span></p>
+
+		<!-- 電話番号の表示 -->
+		<p>電話番号: <span>{{ user.phone }}</span></p>
+
+		<!-- ユーザー一覧ページに戻るリンク -->
+		<a href="/users">ユーザー一覧に戻る</a>
+	</div>
+</body>
+
+</html>

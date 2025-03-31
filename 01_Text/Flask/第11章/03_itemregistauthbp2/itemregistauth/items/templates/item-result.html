@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+	<title>商品一覧</title>
+	<h3><span>{{ session['loggedInUser'] }} ユーザー</span>さん</h3>
+</head>
+
+<body>
+	<h1>商品一覧</h1>
+
+	<!-- アイテムの一覧を表示するテーブル -->
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th> <!-- IDのヘッダー -->
+				<th>商品名</th> <!-- 商品名のヘッダー -->
+				<th>単価</th> <!-- 単価のヘッダー -->
+			</tr>
+		</thead>
+		<tbody>
+            <!-- itemsリストの各itemをループしてテーブルの行を生成 -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td> <!-- アイテムのIDを表示 -->
+                    <td>{{ item.name }}</td> <!-- アイテムの名前を表示 -->
+                    <td>{{ item.price }}</td> <!-- アイテムの価格を表示 -->
+                </tr>
+            {% endfor %}
+		</tbody>
+	</table>
+
+	<!-- 入力フォームに戻るリンク -->
+	<a href="{{ url_for('items.input') }}">戻る</a>
+	
+	<!-- ログアウト -->
+	<form action="{{ url_for('auth.logout') }}" method="get">
+		<button type="submit">ログアウト</button>
+	</form>
+</body>
+
+</html>

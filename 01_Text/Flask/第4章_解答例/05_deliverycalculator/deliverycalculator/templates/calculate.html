@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>Delivery Fee Calculator</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>宅配便料金計算</h1>
+
+    <!-- 入力フォームの説明 -->
+    <p>お荷物のサイズと重量を入力してください。</p>
+
+    <!-- 配送料金を計算するフォーム -->
+    <form action="/calculate" method="post">
+        <!-- フォームの送信先を「/calculate」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <!-- タテの入力欄 -->
+        <p>
+            <label for="length">タテ (cm): </label>
+            <input name="length" type="number" value="{{ length }}" /><br/>
+            <!-- ユーザーが入力した値を保持するため、value属性に length を設定 -->
+
+            {% if length_err %}
+                <!-- タテにエラーがある場合、エラーメッセージを赤色で表示 -->
+                <div style="color: red;">{{ length_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- ヨコの入力欄 -->
+        <p>
+            <label for="width">ヨコ (cm): </label>
+            <input name="width" type="number" value="{{ width }}" /><br/>
+            {% if width_err %}
+                <div style="color: red;">{{ width_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- 高さの入力欄 -->
+        <p>
+            <label for="height">高さ (cm): </label>
+            <input name="height" type="number" value="{{ height }}" /><br/>
+            {% if height_err %}
+                <div style="color: red;">{{ height_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- 重量の入力欄 -->
+        <p>
+            <label for="weight">重量 (kg): </label>
+            <input name="weight" type="number" value="{{ weight }}" step="0.01" /><br/>
+            <!-- step="0.01" により小数点第2位まで入力可能 -->
+            {% if weight_err %}
+                <div style="color: red;">{{ weight_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- クーポン使用の選択（ラジオボタン） -->
+        <p>
+            <label for="hasCoupon">クーポン使用: </label>
+            <input type="radio" value="true" name="coupon" {% if coupon == 'true' %}checked{% endif %}/> あり
+            <input type="radio" value="false" name="coupon" {% if coupon == 'false' %}checked{% endif %}/> なし<br/>
+            <!-- クーポンの有無を選択するラジオボタン。ユーザーが選択した値を保持 -->
+        </p>
+
+        <!-- フォームの送信ボタン -->
+        <button type="submit">計算する</button>
+    </form>
+</body>
+
+</html>

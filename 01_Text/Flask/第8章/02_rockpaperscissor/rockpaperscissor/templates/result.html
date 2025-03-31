@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけんゲーム結果</title>
+    <!-- 外部CSSファイルを適用（スタイルを設定） -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>じゃんけんゲームの結果</h1>
+
+    <!-- じゃんけんの最終的な勝敗結果を表示 -->
+    <h3>{{ "勝ち: " ~ wins ~ "回" }}</h3>
+    <h3>{{ "負け: " ~ losses ~ "回" }}</h3>
+    <h3>{{ "引き分け: " ~ draws ~ "回" }}</h3>
+
+    <!-- もう一度ゲームを開始するためのリンク -->
+    <a href="/start">もう一度プレイする</a>
+</body>
+
+</html>

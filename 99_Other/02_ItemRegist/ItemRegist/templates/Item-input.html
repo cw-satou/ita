@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<title>商品登録フォーム</title> <!-- ページのタイトルを「商品登録フォーム」に設定 -->
+</head>
+<body>
+	<h1>商品登録フォーム</h1> <!-- フォームのヘッダー -->
+
+	<!-- 商品情報を登録するフォーム -->
+	<form action="/register" method="post">
+		<!-- 商品名の入力フィールド -->
+		<p>	
+			<label>商品名:</label> <!-- 入力フィールドのラベルとして「商品名」を表示 -->
+			<input type="text" name="name"> <!-- 商品名を入力するテキストフィールド -->
+		</p>
+
+		<!-- 単価の入力フィールド -->
+		<p>	
+			<label>単価:</label> <!-- 入力フィールドのラベルとして「単価」を表示 -->
+			<input type="number" name="price"> <!-- 商品の単価を入力する数値フィールド -->
+		</p>
+
+		<!-- 登録ボタン -->
+		<button type="submit">登録</button> <!-- フォーム送信のためのボタン -->
+	</form>
+</body>
+</html>

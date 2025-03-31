@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+	<title>商品登録フォーム</title>
+	<h3><span>{{ session['loggedInUser'] }} ユーザー</span>さん</h3>
+
+</head>
+
+<body>
+	<h1>商品登録フォーム</h1>
+
+	{% for message in get_flashed_messages() %}
+	<div style="color: red">
+		{{ message }}
+	</div>
+	{% endfor %}
+
+	<!-- フォームの開始タグ -->
+	<form action="{{ url_for('items.register') }}" method="post">
+		<p>
+			<label>商品名:</label> 
+			<input type="text" name="name"> <!-- 商品名の入力欄 -->
+		</p>
+		<p>
+			<label>単価:</label>
+			<input type="number" name="price"> <!-- 単価の入力欄 -->
+		</p>
+		<!-- フォーム送信ボタン -->
+		<button type="submit">登録</button> 
+	</form>
+	
+	<!-- ログアウト -->
+	<form action="{{ url_for('auth.logout') }}" method="get">
+		<button type="submit">ログアウト</button>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-expand-lg">
+    <!-- メニュー -->
+    <div class="menu-container">
+        <!-- バンバーガーメニュー用 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- メニューのリスト -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="menu navbar-nav mx-auto">
+                <!-- 会員管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('staff.member_list') }}">会員管理</a>
+                </li>
+                <!-- 客室タイプ管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">客室タイプ管理</a>
+                </li>
+                <!-- 客室管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">客室管理</a>
+                </li>
+                <!-- 宿泊プラン管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">宿泊プラン管理</a>
+                </li>
+                <!-- 予約管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">予約管理</a>
+                </li>
+                <!-- 稼働状況管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">稼働状況管理</a>
+                </li>
+                <!-- スタッフ管理へのリンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('staff.staff_list') }}">スタッフ管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,35 @@
+[project]
+name = "03_ProjectExercise"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "gan1623", email = "pubitlabo@gmail.com" }
+]
+dependencies = [
+    "flask>=3.1.0",
+    "flask-sqlalchemy>=3.1.1",
+    "psycopg2-binary>=2.9.10",
+    "flask-bootstrap>=3.3.7.1",
+    "pytest>=8.3.5",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/_03_ProjectExercise"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --strict-markers"

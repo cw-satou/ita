@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>入力フォーム</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>数値の加算</h1>
+
+    <!-- ユーザーが数値を入力し、送信できるフォーム -->
+    <form action="/calculate" method="post">
+        <!-- フォームの送信先を「/calculate」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <!-- 1つ目の数値入力欄 -->
+        <p>
+            <label>数値1:</label>
+            <input type="number" name="num1" value="{{ num1 }}">
+            <!-- ユーザーが入力した値を保持するため、value属性に num1 を設定 -->
+
+            {% if num1err %}
+                <!-- 数値1にエラーがある場合、エラーメッセージを赤色で表示 -->
+                <div style="color: red;">{{ num1err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- 2つ目の数値入力欄 -->
+        <p>
+            <label>数値2:</label>
+            <input type="number" name="num2" value="{{ num2 }}">
+            <!-- ユーザーが入力した値を保持するため、value属性に num2 を設定 -->
+
+            {% if num2err %}
+                <!-- 数値2にエラーがある場合、エラーメッセージを赤色で表示 -->
+                <div style="color: red;">{{ num2err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- フォームの送信ボタン -->
+        <button type="submit">計算</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>商品データ確認</title>
+</head>
+
+<body>
+    <h2>変更内容確認</h2>
+
+    <!-- 商品の変更内容を確認するフォーム -->
+    <form action="/items/update" method="post">
+
+        <!-- 商品IDの表示と隠しフィールド -->
+        <p>
+            ID: <span>{{ item.id }}</span>
+            <input type="hidden" name="id" value="{{ item.id }}">
+        </p>
+
+        <!-- 商品名の表示と隠しフィールド -->
+        <p>
+            商品名: <span>{{ item.name }}</span>
+            <input type="hidden" name="name" value="{{ item.name }}">
+        </p>
+
+        <!-- 単価の表示と隠しフィールド -->
+        <p>
+            単価: <span>{{ item.price }}</span>
+            <input type="hidden" name="price" value="{{ item.price }}">
+        </p>
+
+        <!-- 更新ボタン -->
+        <button type="submit">更新</button>
+    </form>
+
+    <!-- 商品編集ページに戻るリンク -->
+    <p><a href="/items/edit/{{ item.id }}">キャンセル</a></p>
+</body>
+
+</html>

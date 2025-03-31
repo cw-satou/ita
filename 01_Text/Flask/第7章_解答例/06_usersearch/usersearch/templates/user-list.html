@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<title>ユーザーリスト</title>
+</head>
+
+<body>
+	<!-- ユーザー検索 -->
+	<h2>ユーザー検索</h2>
+
+	<!-- 検索フォーム -->
+	<form action="/users/search" method="get">
+		<label>ID:</label>
+		<input type="text" name="id" id="id" style="width: 20px;"> <!-- ユーザーIDを入力 -->
+		<label>ユーザー名:</label>
+		<input type="text" name="name" id="name" style="width: 100px;"> <!-- ユーザー名を入力 -->
+		<button type="submit">検索</button> <!-- 検索ボタン -->
+	</form>
+
+	<!-- 検索の使い方 -->
+	<ul>
+		<li>IDは完全一致、ユーザー名は部分一致検索可能</li> <!-- 検索方法の説明 -->
+		<li>ID、ユーザー名の両方を空欄にして検索すると全件表示</li> <!-- 両方空欄時の動作 -->
+	</ul>
+
+	<!-- ユーザー一覧 -->
+	<h2>ユーザー一覧</h2>
+
+	<!-- ユーザーデータ一覧 -->
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>ユーザー名</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- usersリストの各userをループしてテーブルの行を生成 -->
+			{% for user in users %}
+			<tr>
+				<td>{{ user.id }}</td> <!-- ユーザーIDを表示 -->
+				<td>{{ user.name }}</td> <!-- ユーザー名を表示 -->
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+
+</html>

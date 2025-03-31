@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>Result</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h2>商品発注を承りました</h2>
+
+    <!-- 商品発注結果の表示 -->
+    <form method="post">
+        <!-- フォームの送信方法を「post」に設定 -->
+
+        <!-- 発注者ID（ログイン中のユーザーIDを表示） -->
+        <p>発注者ID: <span>{{ session['loggedInUser'] }}</span></p>
+        <!-- Flaskの session を使用してログイン中のユーザーIDを表示 -->
+
+        <div>
+            <label>＜発注品＞</label><br>
+
+            <!-- 発注した商品情報を表示 -->
+            <label>商品：</label>
+            <span>{{ product }}</span><br>
+            <input type="hidden" name="product" value="{{ product }}">
+            <!-- 商品データを hidden フィールドに格納し、フォーム送信時にデータを保持 -->
+
+            <!-- 発注した数量を表示 -->
+            <label>数量：</label>
+            <span>{{ quantity }}</span><br>
+            <input type="hidden" name="quantity" value="{{ quantity }}">
+            <!-- 数量データを hidden フィールドに格納し、フォーム送信時にデータを保持 -->
+
+            <!-- 「戻る」ボタン（入力画面に戻る） -->
+            <button type="submit" formaction="/back">戻る</button>
+            <!-- フォームの送信先を「/back」に設定し、発注画面に戻る処理を実行 -->
+            
+            <!-- ログアウトボタン（ログアウト処理を実行）をここに追加 -->
+        </div>
+    </form>
+</body>
+
+</html>

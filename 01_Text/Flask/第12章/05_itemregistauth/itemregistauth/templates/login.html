@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<!-- ページのタイトルを設定 -->
+	<title>ログイン</title>
+</head>
+
+<body>
+	<!-- ページの見出しを表示 -->
+	<h1>ログイン</h1>
+    
+    <!-- エラーメッセージ（例: ログイン失敗時）を表示 -->
+	{% for message in get_flashed_messages() %}
+	<div style="color: red">
+		{{ message }}
+	</div>
+	{% endfor %}
+
+	<!-- ログインフォームの開始 -->
+	<form action="{{ url_for('login') }}" method="post">
+		<!-- ユーザーIDの入力欄 -->
+		<p>
+			<label>ユーザーID:</label>
+			<input type="text" name="user_id" />
+		</p>
+		<!-- パスワードの入力欄 -->
+		<p>
+			<label>パスワード:</label>
+			<input type="password" name="password" />
+		</p>
+		<!-- ログインボタン -->
+		<button type="submit">ログイン</button>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instructor List</title>
+	<!-- CSSファイルを読み込み -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<!-- ヘッダー部分をインクルード -->
+		{% include 'header.html' %}
+		<!-- インストラクター新規登録ボタン -->
+		<p><a href="{{ url_for('create_inst') }}" class="create-button">インストラクター新規登録</a></p>
+		<!-- 検索条件表示 -->
+		<p>{{ searchKey }}</p>
+		<!-- 検索結果件数を表示 -->
+		検索結果：<span>{{ instList | length }}</span>件
+
+		<!-- インストラクター一覧をテーブルで表示 -->
+		<table border="1">
+			<tr>
+				<th>{{ 'No' }}</th>
+				<th>氏名</th>
+				<th>{{ 'ビジネスネーム' }}</th>
+				<th>分野</th>
+				<th>経験</th>
+				<th>登録日</th>
+			</tr>
+            <!-- インストラクターと分野の情報をループで表示 -->
+            {% for instructor, field in instList %}
+            <tr>
+				<tr>
+					<!-- No -->
+					<td>{{ instructor.instructor_id }}</td>
+					<!-- 氏名 -->
+					<td>{{ instructor.full_name }}</td>
+					<!-- ビジネスネーム -->
+					<td>{{ instructor.business_name }}</td>
+					<!-- 分野 -->
+					<td>{{ field.field_name }}</td>
+					<!-- 経験 -->
+					<td>{{ instructor.experience }}</td>
+					<!-- 登録日がある場合はフォーマット変換して表示、ない場合はN/A表示 -->
+					<td>{{ instructor.regist_date.strftime('%Y-%m-%d') if instructor.regist_date else 'N/A' }}</td>
+					<!-- 更新ボタン。クリックすると対応するインストラクターの更新ページへ移動 -->
+					<td><a href="{{ url_for('update_inst', instructor_id=instructor.instructor_id) }}" class="update-button">更新</a></td>
+				</tr>
+            </tr>
+            {% endfor %}			
+		</table>
+	</div>
+</body>
+</html>

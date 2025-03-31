@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>商品登録フォーム</title>
+
+    <!-- ログイン中のユーザー名を表示 -->
+    <h3><span>{{ session['loggedInUser'] }} ユーザー</span>さん</h3>
+    <!-- Flaskのsessionを使用し、現在ログインしているユーザーの名前を表示 -->
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>商品登録フォーム</h1>
+
+    <!-- 商品登録フォーム -->
+    <form action="/register" method="post">
+        <!-- フォームの送信先を「/register」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <!-- 商品名の入力欄 -->
+        <p>
+            <label>商品名:</label>
+            <input type="text" name="name" required>
+            <!-- required属性を追加し、未入力を防ぐ -->
+        </p>
+
+        <!-- 単価の入力欄 -->
+        <p>
+            <label>単価:</label>
+            <input type="number" name="price" required>
+            <!-- required属性を追加し、未入力を防ぐ -->
+        </p>
+
+        <!-- フォーム送信ボタン（商品登録） -->
+        <button type="submit">登録</button>
+    </form>
+
+    <!-- ログアウトフォーム -->
+    <form action="/logout" method="get">
+        <!-- フォームの送信先を「/logout」に設定し、GETメソッドでログアウト処理を実行 -->
+        <button type="submit">ログアウト</button>
+    </form>
+</body>
+
+</html>

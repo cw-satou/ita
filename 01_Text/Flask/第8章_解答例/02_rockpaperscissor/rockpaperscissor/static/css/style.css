@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* ページ全体の基本的なスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* タイトルのスタイル */
+h1 {
+    color: #007BFF;
+}
+
+/* フォーム全体のスタイル */
+form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ラジオボタンのスタイル */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* ラベルのスタイル */
+label {
+    margin-right: 20px;
+}
+
+/* ボタンの基本的なスタイル */
+button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* ボタンにマウスオーバーしたときのスタイル */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* リンクのスタイル */
+a {
+    display: inline-block;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* リンクにマウスオーバーしたときのスタイル */
+a:hover {
+    background-color: #1e7e34;
+}
+
+/* 勝負の結果表示のスタイル */
+h2 {
+    color:#FF8080;
+}
+
+/* 勝敗結果表示のスタイル */
+h3 {
+    color:#FF8080;
+}

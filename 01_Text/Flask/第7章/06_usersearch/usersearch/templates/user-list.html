@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ユーザーリスト</title>
+</head>
+
+<body>
+    <!-- ユーザー検索フォーム -->
+    <h2>ユーザー検索</h2>
+
+    <form action="/users/search" method="get">
+        <label>ID:</label>
+        <input type="text" name="id" id="id" style="width: 20px;"> <!-- ユーザーIDの入力欄 -->
+        <label>ユーザー名:</label>
+        <input type="text" name="name" id="name" style="width: 100px;"> <!-- ユーザー名の入力欄 -->
+        <button type="submit">検索</button> <!-- 検索ボタン -->
+    </form>
+
+    <!-- 検索条件の説明 -->
+    <ul>
+        <li>IDは完全一致、ユーザー名は部分一致で検索</li>
+        <li>IDとユーザー名の両方を空欄にすると全件表示</li>
+    </ul>
+
+    <!-- ユーザー一覧 -->
+    <h2>ユーザー一覧</h2>
+
+    <!-- ユーザーデータの一覧表 -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th> <!-- ユーザーIDの列 -->
+                <th>ユーザー名</th> <!-- ユーザー名の列 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- usersリストの各userをループして行を作成 -->
+        </tbody>
+    </table>
+</body>
+
+</html>

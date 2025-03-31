@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>入力フォーム</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>BMIの計算</h1>
+
+    <!-- ユーザーが身長と体重を入力し、BMIを計算するフォーム -->
+    <form action="/bmi" method="post">
+        <!-- フォームの送信先を「/bmi」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <!-- 身長の入力欄 -->
+        <p>
+            <label>身長 (m):</label>
+            <input type="number" step="0.01" name="height" value="{{ height }}">
+            <!-- step="0.01" により小数点第2位までの入力が可能 -->
+
+            {% if height_err %}
+                <!-- 身長にエラーがある場合、エラーメッセージを赤色で表示 -->
+                <div style="color: red;">{{ height_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- 体重の入力欄 -->
+        <p>
+            <label>体重 (kg):</label>
+            <input type="number" step="0.1" name="weight" value="{{ weight }}">
+            <!-- step="0.1" により小数点第1位までの入力が可能 -->
+
+            {% if weight_err %}
+                <!-- 体重にエラーがある場合、エラーメッセージを赤色で表示 -->
+                <div style="color: red;">{{ weight_err }}</div>
+            {% endif %}
+        </p>
+
+        <!-- フォームの送信ボタン -->
+        <button type="submit">BMIを求める</button>
+    </form>
+</body>
+
+</html>

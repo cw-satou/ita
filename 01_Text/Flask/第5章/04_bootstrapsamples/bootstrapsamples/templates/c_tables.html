@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <!-- レスポンシブデザインのためのビューポート設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- Bootstrapのスタイルシートを読み込み -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- container: コンテンツを中央に配置し、左右に余白を作るコンテナ -->
+    <div class="container">
+        <!-- row: グリッドシステムの行を作成 -->
+        <div class="row">
+            <!-- col: 列を作成、自動的に幅を調整 -->
+            <div class="col">
+                <h3>テーブル</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- table: Bootstrapのテーブル基本スタイル -->
+                <!-- table-info: 水色の背景色を適用 -->
+                <!-- table-striped: 交互に行の背景色を変えて縞模様にする -->
+                <!-- table-hover: マウスホバー時に行の背景色が変わる -->
+                <!-- table-bordered: すべてのセルに枠線を追加 -->
+                <table class="table table-info table-striped table-hover table-bordered">
+                    <!-- thead: テーブルヘッダー部分 -->
+                    <thead>
+                        <tr>
+                            <!-- scope="col": この見出しが列の見出しであることを示す -->
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <!-- tbody: テーブル本体部分 -->
+                    <tbody>
+                        <tr>
+                            <!-- scope="row": この見出しが行の見出しであることを示す -->
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>

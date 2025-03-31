@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>商品発注画面</title>
+
+    <style>
+        /* エラーメッセージの文字色を赤にする */
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h2>◇商品発注画面</h2>
+
+    <!-- エラーメッセージの表示 -->
+    {% for message in get_flashed_messages() %}
+    <div class="red">
+        {{ message }}
+    </div>
+    {% endfor %}
+    <!-- Flaskの `flash()` で設定されたエラーメッセージを取得して表示 -->
+    <!-- 例: 商品未選択、数量未入力など -->
+
+    <!-- 商品発注フォーム -->
+    <form action="/order" method="get">
+        <!-- フォームの送信先を「/order」に設定 -->
+        <!-- method="get" を指定し、データをURLパラメータとして送信 -->
+
+        <table>
+            <!-- 商品選択欄 -->
+            <tr>
+                <th>商品選択</th>
+                <td>
+                    <select name="product">
+                        <!-- 初期値（未選択状態） -->
+                        <option value="" {% if product=="" %}selected{% endif %}>--商品を選択--</option>
+                        <!-- 選択肢（ケーブル、電源タップ、マウス） -->
+                        <option value="ケーブル" {% if product=="ケーブル" %}selected{% endif %}>ケーブル</option>
+                        <option value="電源タップ" {% if product=="電源タップ" %}selected{% endif %}>電源タップ</option>
+                        <option value="マウス" {% if product=="マウス" %}selected{% endif %}>マウス</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 数量入力欄 -->
+            <tr>
+                <th>数量</th>
+                <td>
+                    <input type="text" name="quantity" value="{{ quantity }}" style="width:100px" required>
+                    <!-- 数量の初期値を表示（前回の入力値を保持） -->
+                    <!-- required属性を追加し、未入力を防ぐ -->
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <!-- フォーム送信ボタン（発注） -->
+        <input type="submit" value="発注"><br><br>
+    </form>
+</body>
+
+</html>

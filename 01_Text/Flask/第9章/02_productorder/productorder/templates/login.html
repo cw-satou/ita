@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>Login</title>
+
+    <style>
+        /* エラーメッセージの文字色を赤にする */
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h2>◇ログイン画面</h2>
+
+    <!-- 認証時にコントローラーで設定されたエラーメッセージを表示処理をここに追加 -->
+    <!-- Flaskの flash() 関数で設定されたエラーメッセージを取得し、赤色で表示 -->
+    <!-- 例: IDやパスワードの入力エラー、認証エラーなど -->
+
+    <!-- ログインフォーム -->
+    <form action="/login" method="post">
+        <!-- フォームの送信先を「/login」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <table>
+            <!-- ユーザーIDの入力欄 -->
+            <tr>
+                <th>ログインID</th>
+                <td>
+                    <input type="text" name="id" style="width:150px" required>
+                    <!-- required属性を追加し、未入力を防ぐ -->
+                </td>
+            </tr>
+
+            <!-- パスワードの入力欄 -->
+            <tr>
+                <th>パスワード</th>
+                <td>
+                    <input type="password" name="password" style="width:150px" required>
+                    <!-- type="password" により、入力時に伏せ字（●●●）で表示 -->
+                    <!-- required属性を追加し、未入力を防ぐ -->
+                </td>
+            </tr>
+        </table>
+
+        <!-- フォーム送信ボタン（ログイン） -->
+        <input type="submit" value="ログイン"><br>
+    </form>
+</body>
+
+</html>

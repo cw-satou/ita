@@ -1,0 +1,411 @@
+/* 2024/3/14 */
+@charset "UTF-8";
+/* 文字エンコーディングをUTF-8に設定 */
+
+/* 基本的なスタイル設定 */
+body {
+	margin: 20px;
+	/* 画面の四方に余白を設定 */
+	font-size: 14px;
+	/* 基本の文字サイズを指定 */
+	background-color: #f4f9ff;
+	/* 背景色を青紫系の色に設定 */
+	color: #333;
+	/* テキストの基本色を暗いグレーに設定 */
+	font-family: Arial, sans-serif;
+	/* フォントファミリーをArial, sans-serifに設定 */
+}
+
+/* ヘッダーエリアのスタイル */
+.header {
+	display: flex;
+	/* フレキシブルボックスモデルを使用 */
+	flex-wrap: wrap;
+	/* 要素が折り返し可能に */
+	justify-content: space-between;
+	/* 子要素を両端に配置 */
+	align-items: center;
+	/* 子要素を中央揃えに配置 */
+	padding: 10px 20px;
+	/* パディングを設定 */
+}
+
+/* ヘッダーのロゴのスタイル */
+.header-logo {
+  max-width: 15%;  /* 最大幅を設定 */
+  height: auto;     /* 高さを自動調整 */
+}
+
+/* 見出しのスタイル */
+h1,
+h2 {
+	font-family: 'Helvetica Neue', sans-serif;
+	/* Helvetica Neueフォントを使用 */
+	font-weight: bold;
+	/* フォントを太字に設定 */
+	margin: 10px 0;
+	/* 上下のマージンを設定 */
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	/* テキストに影を追加 */
+}
+
+h1 {
+	color: #4a7c59;
+	/* h1要素の色を濃い緑に設定 */
+	text-align: center;
+	/* テキストを中央揃えに設定 */
+	font-size: 28px;
+	/* フォントサイズを28pxに設定 */
+}
+
+h2 {
+	color: #6dbb8a;
+	/* h2要素の色を明るい緑に設定 */
+	text-align: left;
+	/* テキストを左揃えに設定 */
+	font-size: 20px;
+	/* フォントサイズを20pxに設定 */
+}
+
+/* テーブルスタイル */
+table {
+	border: solid 1px #98c1a4;
+	/* テーブルの境界線を設定 */
+	border-collapse: collapse;
+	/* 境界線を統合 */
+	width: 100%;
+	/* テーブルの幅を全幅に設定 */
+}
+
+th {
+	text-align: center;
+	/* th要素のテキストを中央揃えに設定 */
+	color: white;
+	/* テキストの色を白に設定 */
+	background: linear-gradient(#1976d2, #1565C0);
+	/* 背景にグラデーションを設定 */
+	box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset;
+	/* 内側の影を設定 */
+	padding: 4px 10px;
+	/* パディングを設定 */
+}
+
+td {
+	padding: 4px 10px;
+	/* td要素のパディングを設定 */
+	border: solid 1px #98c1a4;
+	/* 境界線を設定 */
+}
+
+/* フォーム関連のスタイル */
+textarea,
+input[type="text"] {
+	padding: 10px;
+	/* パディングを設定 */
+	border: 1px solid #ccc;
+	/* 境界線を設定 */
+	border-radius: 4px;
+	/* 角を丸める */
+	box-sizing: border-box;
+	/* ボックスサイズをborder-boxに設定 */
+	box-shadow: 0px 0px 8px rgba(0, 0,
+			0, 0.1);
+	/* 入力フィールドに影を付けて立体的な見た目に */
+}
+
+textarea {
+	width: 100%;
+	/* テキストエリアの幅をコンテナの全幅に設定 */
+	max-width: 100%;
+	/* 最大幅をコンテナの幅に合わせる */
+	height: 150px;
+	/* 高さを設定 */
+	resize: vertical;
+	/* 垂直方向のサイズ変更を可能に */
+}
+
+input[type="text"] {
+	margin: 8px 0;
+	/* 上下のマージンを設定 */
+	display: inline-block;
+	/* インラインブロックとして表示 */
+}
+
+input[type="text"]:focus {
+	outline: none;
+	/* フォーカス時のアウトラインを除去 */
+	border-color: #6dbb8a;
+	/* フォーカス時のボーダーカラーを変更 */
+}
+
+/* ボタンスタイル */
+button {
+	width: 90px;
+	/* ボタンの幅を設定 */
+	margin: 10px 4px;
+	/* 周囲のマージンを設定 */
+	padding: 4px;
+	/* 内側の余白を設定 */
+	background-color: #78909c;
+	/* 背景色を設定 */
+	color: white;
+	/* 文字色を白に設定 */
+	border: none;
+	/* 境界線を除去 */
+	border-radius: 5px;
+	/* 角を丸める */
+	cursor: pointer;
+	/* カーソルをポインターに変更 */
+	transition: background-color 0.3s;
+	/* 背景色の変更をアニメーション化 */
+}
+
+button:hover {
+	background-color: #37474f;
+	/* ホバー時の背景色を濃いグレー色に変更 */
+}
+
+/* 追加のクラススタイル */
+.red {
+	color: #e74c3c;
+	/* 赤色のテキストカラーを設定 */
+}
+
+.gray {
+	background-color: #a9a9a9;
+	/* 灰色の背景色を設定 */
+}
+
+.dodger-blue {
+	background-color: #1E90FF;
+	/* ドジャーブルーの背景色を設定 */
+}
+
+.nickname {
+	color: #333;
+	/* ニックネームのテキストカラーを暗い灰色に設定 */
+	background-color: #f8f8f8;
+	/* ニックネームの背景色を薄灰色に設定 */
+	font-size: 20px;
+	/* フォントサイズを大きく設定 */
+	font-weight: bold;
+	/* テキストを太字に設定 */
+	text-align: left;
+	/* テキストを左揃えに設定 */
+	margin: 10px 0;
+	/* 上下のマージンを設定 */
+	padding: 5px;
+	/* 内側の余白を設定 */
+	border-radius: 5px;
+	/* 角を丸める */
+}
+
+/* ログインフォームのスタイル */
+.login-form {
+	display: flex; 
+	/* フレックスボックスモデルを使用して子要素を整列 */
+	flex-direction: column; 
+	/* 子要素を縦方向に並べる */
+	align-items: center; 
+	/* 子要素を中央揃えにする */
+	margin-bottom: 15px; 
+	/* 下部の余白を15pxに設定 */
+}
+
+/* ログインフォーム内で水平に配置される要素のスタイル */
+.login-horizon {
+	display: flex; 
+	/* フレックスボックスモデルを使用して子要素を整列 */
+	align-items: center; 
+	/* 子要素を中央揃えにする */
+}
+
+/* ログインフォーム内のinput要素のスタイル */
+.login-form input {
+	padding: 8px 12px; 
+	/* 内側の余白を設定 */
+	border: 1px solid #000000; 
+	/* 境界線を1pxの黒色に設定 */
+	border-radius: 4px; 
+	/* 角を丸くする */
+	margin: 0px 10px 10px; 
+	/* 上に0px、左右に10px、下に10pxの余白を設定 */
+}
+
+/* ログインフォーム内のボタンのスタイル */
+.login-form button {
+	padding: 10px 10px; 
+	/* 内側の余白を設定 */
+	background-color: #ec6800; 
+	/* 背景色をオレンジに設定 */
+	color: white; 
+	/* 文字色を白に設定 */
+    font-weight: bold; 
+    /* 文字を太字に設定 */
+	border: none; 
+	/* 境界線を無しに設定 */
+	border-radius: 4px; 
+	/* 角を丸くする */
+	cursor: pointer; 
+	/* カーソルをポインターに変更 */
+}
+
+/* ログインフォーム内のボタンをホバー時のスタイル */
+.login-form button:hover {
+	background-color: #f08300; 
+	/* ホバー時の背景色を薄いオレンジ色に変更 */
+}
+
+/* ログインフォームフィールドのセンタリング調整 */
+.login-horizon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* 要素を左揃えに */
+	width: 100%;
+	max-width: 300px; /* 必要に応じて幅を調整 */
+	margin-bottom: 10px; /* フィールド間の余白 */
+}
+
+.login-horizon label {
+	width: 80px; /* ラベルの幅を統一 */
+	text-align: right; /* テキストを右揃え */
+	margin-right: 10px; /* ラベルと入力欄の間の余白 */
+}
+
+.login-horizon input[type="text"],
+.login-horizon input[type="password"] {
+	flex: 1; /* 入力フィールドが残りのスペースを取るように設定 */
+	padding: 8px 12px;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	margin: 0;
+	box-sizing: border-box; /* パディングを含めた幅を設定 */
+}
+
+/* 検索フォームのスタイル */
+.search-form {
+	display: flex;
+	/* フレックスボックスモデルを使用して要素を並べる */
+	flex-wrap: wrap;
+	/* 要素が折り返し可能に */
+	justify-content: center;
+	/* 水平方向の中心に要素を配置 */
+	align-items: center;
+	/* 垂直方向の中心に要素を配置 */
+	margin-bottom: 20px;
+	/* 下部の余白を設定 */
+}
+
+.search-form>div {
+	display: flex;
+	/* フレックスボックスモデルを使用 */
+	align-items: center;
+	/* 垂直方向の中心に要素を配置 */
+	margin-right: 15px;
+	/* 右側のマージンを設定 */
+}
+
+.search-form label {
+	margin-right: 10px;
+	/* ラベルと入力フィールドの間のマージンを設定 */
+	font-weight: bold;
+	/* ラベルのフォントを太字に設定 */
+}
+
+.search-form button {
+	background-color: #7dcfb6;
+	/* ボタンの背景色を設定 */
+	color: white;
+	/* ボタンの文字色を白に設定 */
+	border: none;
+	/* ボタンの境界線を除去 */
+	border-radius: 4px;
+	/* ボタンの角を丸める */
+	transition: background-color 0.3s;
+	/* 背景色の変化にアニメーションを適用 */
+}
+
+.search-form button:hover {
+	background-color: #6dbb8a;
+	/* ホバー時にボタンの背景色を変更 */
+}
+
+/* ログアウトボタンのスタイル */
+.logout-button {
+	padding: 5px 10px;
+	/* 内側の余白を設定 */
+	background-color: #a9a9a9;
+	/* ボタンの背景色を灰色に設定 */
+	color: white;
+	/* ボタンの文字色を白に設定 */
+	text-decoration: none;
+	/* テキストの装飾をなしに設定 */
+	border-radius: 5px;
+	/* ボタンの角を丸める */
+	cursor: pointer;
+	/* カーソルをポインターに変更 */
+}
+
+.logout-button:hover {
+	background-color: #808080;
+	/* ホバー時にボタンの背景色を濃い灰色に変更 */
+}
+
+/* ノート作成・登録・更新ボタンのスタイル */
+.create-button {
+	display: inline-block;
+	/* インラインブロック要素として表示 */
+	padding: 10px 15px;
+	/* 内側の余白を設定 */
+	background-color: #1E90FF;
+	/* ボタンの背景色を青色に設定 */
+	color: white;
+	/* ボタンの文字色を白に設定 */
+	text-align: center;
+	/* テキストを中央揃えに設定 */
+	text-decoration: none;
+	/* テキストの装飾をなしに設定 */
+	border-radius: 5px;
+	/* ボタンの角を丸める */
+	font-weight: bold;
+	/* テキストを太字に設定 */
+	border: none;
+	/* ボタンの境界
+    線を除去 */
+	transition: background-color 0.3s;
+	/* ホバー時の背景色の変更にアニメーションを適用 */
+}
+
+.create-button:hover {
+	background-color: #1EB2E9;
+	/* ホバー時に背景色を少し明るい青色に変更 */
+}
+
+.update-button {
+	display: inline-block;
+	/* インラインブロック要素として表示 */
+	padding: 5px 5px;
+	/* 内側の余白を設定 */
+	background-color: #1e90ff5c;
+	/* ボタンの背景色を水色に設定 */
+	color: white;
+	/* ボタンの文字色を白に設定 */
+	text-align: center;
+	/* テキストを中央揃えに設定 */
+	text-decoration: none;
+	/* テキストの装飾をなしに設定 */
+	border-radius: 5px;
+	/* ボタンの角を丸める */
+	font-weight: bold;
+	/* テキストを太字に設定 */
+	border: none;
+	/* ボタンの境界
+    線を除去 */
+	transition: background-color 0.3s;
+	/* ホバー時の背景色の変更にアニメーションを適用 */
+}
+
+.update-button:hover {
+	background-color: #1EB2E9;
+	/* ホバー時に背景色を少し明るい青色に変更 */
+}

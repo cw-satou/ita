@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Project List</title>
+	<style>
+		/* テーブルのセルのスタイル設定：幅、中央揃え、枠線 */
+		.table th, .table td { 
+			width: 150px;
+			text-align: center;
+			border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 共通ヘッダーの呼び出し -->
+	{% include 'header.html' %}
+
+    <h3>プロジェクト一覧</h3>
+	<form>
+		<!-- プロジェクト情報を表示するテーブル -->
+		<table class="table">
+			<!-- テーブルのヘッダー行 -->
+			<tr>
+				<th>プロジェクト名</th>
+				<th>ステータス</th>
+				<th>管理者名</th>
+			</tr>
+			<!-- データ表示のループをここに記載 -->
+            <!-- pjmdata_listの各要素をループ処理 -->
+            {% for pjmdata in pjmdata_list %}
+            <tr>
+				<tr>
+					<!-- プロジェクト名を表示 -->
+					<td>{{ pjmdata.pjname }}</td>
+					<!-- ステータスを表示 -->
+					<td>{{ pjmdata.status }}</td>
+					<!-- 管理者名を表示 -->
+					<td>{{ pjmdata.manager }}</td>
+				</tr>
+            </tr>
+            {% endfor %}
+		</table>
+	</form>
+</body>
+
+</html>

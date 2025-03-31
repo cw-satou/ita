@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけんゲーム</title>
+    <!-- 外部CSSファイルを適用 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>じゃんけんゲーム</h1>
+
+    <!-- じゃんけんの選択フォーム（プレイヤーが手を選ぶ） -->
+    <form action="/play" method="post">
+        <!-- グー（デフォルトで選択） -->
+        <input type="radio" id="rock" name="playerHand" value="0" checked>
+        <label for="rock">グー</label>
+
+        <!-- チョキ -->
+        <input type="radio" id="scissors" name="playerHand" value="1">
+        <label for="scissors">チョキ</label>
+
+        <!-- パー -->
+        <input type="radio" id="paper" name="playerHand" value="2">
+        <label for="paper">パー</label>
+
+        <!-- フォーム送信ボタン（じゃんけん開始） -->
+        <button type="submit">ぽん！</button>
+    </form>
+
+    <!-- 直近のじゃんけん結果を表示（1回ごとの結果） -->
+    {% if onceResult %}
+    <div>
+        <h2>{{ onceResult }}</h2>
+    </div>
+    {% endif %}
+
+    <!-- セッションに保存されている勝敗数を表示 -->
+    <div>
+        <p>
+            {{ "勝ち: " ~ session['wins'] ~ "回 　負け: " ~ session['losses'] ~ "回　 引き分け: " ~ session['draws'] ~ "回" }}
+        </p>
+    </div>
+
+    <!-- ゲーム終了ボタン（セッションリセット） -->
+    <form action="/finish" method="post">
+        <button type="submit">ゲーム終了</button>
+    </form>
+</body>
+
+</html>

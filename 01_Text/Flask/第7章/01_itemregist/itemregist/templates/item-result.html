@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品一覧</title>
+</head>
+
+<body>
+    <h1>商品一覧</h1>
+
+    <!-- 商品一覧を表示するテーブル -->
+    <table>
+        <!-- テーブルのヘッダー -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>商品名</th>
+                <th>単価</th>
+            </tr>
+        </thead>
+        <!-- 商品データを表示するテーブルのボディ -->
+        <tbody>
+            <!-- itemsリストの各itemをループ処理し、行を作成 -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td> <!-- 商品ID -->
+                    <td>{{ item.name }}</td> <!-- 商品名 -->
+                    <td>{{ item.price }}</td> <!-- 商品の単価 -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- 商品登録フォームへ戻るリンク -->
+    <a href="/input">戻る</a>
+</body>
+</html>

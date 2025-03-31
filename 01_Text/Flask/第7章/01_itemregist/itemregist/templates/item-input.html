@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>商品登録フォーム</title>
+</head>
+
+<body>
+    <h1>商品登録フォーム</h1>
+
+    <!-- 商品情報を登録するフォーム -->
+    <form action="/register" method="post">
+        
+        <!-- 商品名の入力フィールド -->
+        <p>
+            <label for="name">商品名:</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+
+        <!-- 単価の入力フィールド -->
+        <p>
+            <label for="price">単価:</label>
+            <input type="number" id="price" name="price" min="0" required>
+        </p>
+
+        <!-- 登録ボタン -->
+        <button type="submit">登録</button>
+    </form>
+</body>
+
+</html>

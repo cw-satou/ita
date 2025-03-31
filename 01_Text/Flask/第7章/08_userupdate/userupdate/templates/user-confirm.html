@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ユーザーデータ確認</title>
+</head>
+
+<body>
+    <h2>変更内容確認</h2>
+
+    <!-- ユーザーの変更内容を確認するフォーム -->
+    <form action="/users/update" method="post">
+
+        <!-- ユーザーIDの表示と隠しフィールド -->
+        <p>
+            ユーザーID: <span>{{ user.id }}</span>
+            <input type="hidden" name="id" value="{{ user.id }}">
+        </p>
+
+        <!-- ユーザー名の表示と隠しフィールド -->
+        <p>
+            ユーザー名: <span>{{ user.name }}</span>
+            <input type="hidden" name="name" value="{{ user.name }}">
+        </p>
+
+        <!-- メールアドレスの表示と隠しフィールド -->
+        <p>
+            メールアドレス: <span>{{ user.email }}</span>
+            <input type="hidden" name="email" value="{{ user.email }}">
+        </p>
+
+        <!-- 電話番号の表示と隠しフィールド -->
+        <p>
+            電話番号: <span>{{ user.phone }}</span>
+            <input type="hidden" name="phone" value="{{ user.phone }}">
+        </p>
+
+        <!-- 更新ボタン -->
+        <button type="submit">更新</button>
+    </form>
+
+    <!-- ユーザー編集ページに戻るリンク -->
+    <p><a href="/users/edit/{{ user.id }}">キャンセル</a></p>
+</body>
+
+</html>

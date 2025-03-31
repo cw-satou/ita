@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>ログイン</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h1>ログイン</h1>
+
+    <!-- エラーメッセージの表示 -->
+    {% for message in get_flashed_messages() %}
+    <div style="color: red">
+        {{ message }}
+    </div>
+    {% endfor %}
+    <!-- Flaskのflash() 関数で設定されたエラーメッセージを表示 -->
+    <!-- 例: ユーザーIDやパスワードの未入力、認証エラーなど -->
+
+    <!-- ログインフォーム -->
+    <form action="/login" method="post">
+        <!-- フォームの送信先を「/login」に設定 -->
+        <!-- method="post" を指定し、データを送信（URLには表示されない） -->
+
+        <!-- ユーザーIDの入力欄 -->
+        <p>
+            <label>ユーザーID:</label>
+            <input type="text" name="user_id" required />
+            <!-- required属性を追加し、未入力を防ぐ -->
+        </p>
+
+        <!-- パスワードの入力欄 -->
+        <p>
+            <label>パスワード:</label>
+            <input type="password" name="password" required />
+            <!-- パスワードが入力されると、画面上では伏せ字（●●●）として表示される -->
+            <!-- required属性を追加し、未入力を防ぐ -->
+        </p>
+
+        <!-- フォーム送信ボタン（ログイン） -->
+        <button type="submit">ログイン</button>
+    </form>
+</body>
+
+</html>

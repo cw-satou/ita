@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- 文字コードを指定 -->
+    <meta charset="utf-8">
+    <!-- レスポンシブデザイン用のメタタグ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ページのタイトル -->
+    <title>RoomEcho</title>
+    <!-- Bootstrap CSSを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapアイコンを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- カスタムCSSを読み込む -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ヘッダーをインクルード -->
+    {% include 'common/member-header.html' %}
+    <!-- メニューバーをインクルード -->
+    {% include 'common/member-menu.html' %}
+
+    <!-- メインコンテナ -->
+    <div class="container main-container">
+        <!-- ページタイトル -->
+        <h1>次のプランを予約しますか？</h1>
+
+        <!-- 予約情報確認フォーム -->
+        <div class="form-comfirm">
+            <!-- フォームを定義 -->
+            <form action="{{ url_for('member.member_bookingadd') }}" method="post">
+                <!-- 隠しフィールドで予約情報を送信 -->
+                <input type="hidden" name="stayplan_id" value="{{ stayplan.stayplan_id }}">
+                <input type="hidden" name="stayplan_name" value="{{ stayplan.stayplan_name }}">
+                <input type="hidden" name="price" value="{{ price }}">
+                <input type="hidden" name="checkin_date" value="{{ checkin_date }}">
+                <input type="hidden" name="checkout_date" value="{{ checkout_date }}">
+                <input type="hidden" name="guest_count" value="{{ guest_count }}">
+
+                <!-- プラン名を表示 -->
+                <div class="form-group">
+                    <div class="form-label">プラン</div>
+                    <div class="form-input">{{ stayplan.stayplan_name }}</div>
+                </div>
+
+                <!-- 宿泊費を表示 -->
+                <div class="form-group">
+                    <div class="form-label">宿泊費</div>
+                    <div class="form-input">￥{{ "{:,}".format(price | int) }}</div>
+                </div>
+
+                <!-- チェックイン日を表示 -->
+                <div class="form-group">
+                    <div class="form-label">チェックイン日</div>
+                    <div class="form-input">{{ checkin_date }}</div>
+                </div>
+
+                <!-- チェックアウト日を表示 -->
+                <div class="form-group">
+                    <div class="form-label">チェックアウト日</div>
+                    <div class="form-input">{{ checkout_date }}</div>
+                </div>
+
+                <!-- 人数を表示 -->
+                <div class="form-group">
+                    <div class="form-label">人数</div>
+                    <div class="form-input">{{ guest_count }}名</div>
+                </div>
+
+                <!-- ボタン -->
+                <div class="btn-group">
+                    <!-- プラン詳細に戻るボタン -->
+                    <a href="{{ url_for('member.member_plan', stayplan_id=stayplan.stayplan_id) }}"
+                        class="btn btn-back">プラン詳細に戻る</a>
+                    <!-- 予約ボタン -->
+                    <button type="submit" class="btn btn-edit">予約する</button>
+                </div>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    <!-- フッターをインクルード -->
+    {% include 'common/member-footer.html' %}
+</body>
+
+</html>

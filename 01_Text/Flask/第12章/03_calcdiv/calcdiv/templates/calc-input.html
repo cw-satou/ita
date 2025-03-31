@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- HTML5で書かれた文書であることを指定しています -->
+<html lang="ja">
+    <head>
+        <!-- ページのタイトル（ブラウザのタブに表示される名前）を指定しています -->
+        <title>入力フォーム</title>
+    </head>
+    <body>
+        <!-- ページの見出しを表示します -->
+        <h1>数値の除算</h1>
+        
+        <!-- フォームを作成しています -->
+        <!-- action="/calculate": フォームの入力データを送信する先のURLを指定しています -->
+        <!-- method="post": データを送信する方法としてPOSTを使用します -->
+        <form action="/calculate" method="post">
+            <!-- 1つ目の入力欄（数値1）を作成 -->
+            <div>
+                <!-- 入力欄のラベル（説明文）を指定しています -->
+                <label for="InputNum">数値1: </label>
+                <!-- ユーザーが入力するテキストボックス -->
+                <!-- name="num1" は、この入力欄に入力された値を「num1」という名前で送信するための設定です -->
+                <input type="text" id="InputNum" name="num1">
+            </div>
+            <br>
+            <!-- 2つ目の入力欄（数値2）を作成 -->
+            <div>
+                <label for="InputNum">数値2: </label>
+                <input type="text" id="InputNum" name="num2">
+            </div>
+            <br>
+            <!-- フォーム送信用のボタン -->
+            <!-- このボタンを押すと、入力したデータが指定したURL（/calculate）に送信されます -->
+            <button type="submit">計算</button>
+        </form>
+    </body>
+</html>

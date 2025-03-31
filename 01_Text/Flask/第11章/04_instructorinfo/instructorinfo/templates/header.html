@@ -1,0 +1,9 @@
+<!-- ヘッダーエリア -->
+<div class="header">
+	<!-- ロゴ画像を表示 -->
+	<img src="{{ url_for('static', filename='images/InstructorInfo.png') }}" class="header-logo" alt="InstructorInfoロゴ">
+	<!-- スタッフ名を表示 -->
+	<p class="staffName">{{ session['staff_name'] }}</p>
+	<!-- ログアウトリンクを表示 -->
+	<p><a href="{{ url_for('logout') }}" class="logout-button">ログアウト</a></p>
+</div>

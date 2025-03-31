@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ユーザー編集</title>
+</head>
+
+<body>
+    <h2>ユーザー情報編集</h2> <!-- 編集フォームのタイトル -->
+
+    <!-- ユーザーデータの編集フォーム -->
+    <form action="/users/confirm" method="post"> <!-- 編集内容を確認するページへ送信 -->
+
+        <!-- ユーザーIDの表示と隠しフィールド -->
+        <p>
+            ID: <span>{{ user.id }}</span> <!-- ユーザーIDを表示 -->
+            <input type="hidden" name="id" value="{{ user.id }}"> <!-- ユーザーIDを送信 -->
+        </p>
+
+        <!-- ユーザー名の入力フィールド -->
+        <p>
+            ユーザー名: <input type="text" name="name" value="{{ user.name }}"> <!-- 現在のユーザー名を表示 -->
+        </p>
+
+        <!-- メールアドレスの入力フィールド -->
+        <p>
+            メールアドレス: <input type="text" name="email" value="{{ user.email }}"> <!-- 現在のメールアドレスを表示 -->
+        </p>
+
+        <!-- 電話番号の入力フィールド -->
+        <p>
+            電話番号: <input type="text" name="phone" value="{{ user.phone }}"> <!-- 現在の電話番号を表示 -->
+        </p>
+
+        <!-- 確認ボタン -->
+        <button type="submit">確認</button> <!-- 入力内容を確認するためのボタン -->
+    </form>
+
+    <!-- ユーザー一覧ページへ戻るリンク -->
+    <p><a href="/users">戻る</a></p> <!-- ユーザー一覧ページに戻るリンク -->
+</body>
+
+</html>

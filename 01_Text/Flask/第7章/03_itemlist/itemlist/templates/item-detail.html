@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>商品データ</title>
+</head>
+
+<body>
+    <div>
+        <h2>商品データ</h2>
+
+        <!-- 商品の詳細情報を表示 -->
+        <p>
+            ID: <span>{{ item.id }}</span>
+        </p>
+        <p>
+            商品名: <span>{{ item.name }}</span>
+        </p>
+        <p>
+            単価: <span>{{ item.price }}</span>
+        </p>
+
+        <!-- 商品リストページに戻るリンク -->
+        <a href="/items">商品リストに戻る</a>
+    </div>
+</body>
+
+</html>

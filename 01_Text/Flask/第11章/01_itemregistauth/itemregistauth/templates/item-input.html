@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+	<!-- ページのタイトルを設定 -->
+	<title>商品登録フォーム</title>
+	<!-- ユーザー名を表示 -->
+	<h3><span>{{ session['loggedInUser'] }} ユーザー</span>さん</h3>
+</head>
+
+<body>
+	<!-- ページの見出しを表示 -->
+	<h1>商品登録フォーム</h1>
+
+	<!-- フラッシュメッセージ（エラーメッセージなど）を表示 -->
+	{% for message in get_flashed_messages() %}
+	<div style="color: red">
+		{{ message }}
+	</div>
+	{% endfor %}
+
+	<!-- 商品登録フォームの開始 -->
+	<form action="{{ url_for('register') }}" method="post">
+		<!-- 商品名の入力欄 -->
+		<p>
+			<label>商品名:</label> 
+			<input type="text" name="name">
+		</p>
+		<!-- 単価の入力欄 -->
+		<p>
+			<label>単価:</label>
+			<input type="number" name="price">
+		</p>
+		<!-- フォーム送信ボタン -->
+		<button type="submit">登録</button> 
+	</form>
+	
+	<!-- ログアウトフォーム -->
+	<form action="{{ url_for('logout') }}" method="get">
+		<!-- ログアウトボタン -->
+		<button type="submit">ログアウト</button>
+	</form>
+</body>
+
+</html>

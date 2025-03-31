@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>商品編集</title>
+</head>
+
+<body>
+    <h2>商品データ編集</h2>
+
+    <!-- 商品データの編集フォーム -->
+    <form action="/items/confirm" method="post">
+
+        <p>
+            {{ "ID: "~item.id }}
+        </p>
+        <input type="hidden" name="id" value="{{ item.id }}"> <!-- 商品IDを隠しフィールドとして送信 -->
+
+        <!-- 商品名の入力欄 -->
+        <p>
+            商品名: <input type="text" name="name" value="{{ item.name }}">
+        </p>
+
+        <!-- 単価の入力欄 -->
+        <p>
+            単価: <input type="text" name="price" value="{{ item.price }}">
+        </p>
+
+        <!-- 確認ボタン -->
+        <button type="submit">確認</button>
+    </form>
+
+    <!-- 商品一覧ページへ戻るリンク -->
+    <p><a href="/items">戻る</a></p>
+</body>
+
+</html>

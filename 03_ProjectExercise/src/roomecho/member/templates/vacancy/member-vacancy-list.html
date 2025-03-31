@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- 文字コードを指定 -->
+    <meta charset="utf-8">
+    <!-- レスポンシブデザイン用のメタタグ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ページのタイトル -->
+    <title>RoomEcho</title>
+    <!-- Bootstrap CSSを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapアイコンを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- カスタムCSSを読み込む -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ヘッダーをインクルード -->
+    {% include 'common/member-header.html' %}
+    <!-- メニューバーをインクルード -->
+    {% include 'common/member-menu.html' %}
+
+    <!-- メインコンテナ -->
+    <div class="container main-container">
+        <!-- ページタイトル -->
+        <h1>空室検索</h1>
+
+        <!-- 空室検索フォーム -->
+        <div class="form-edit">
+            <!-- エラーメッセージ表示 -->
+            {% if err_message %}
+            <div class="error-message">{{ err_message }}</div>
+            {% endif %}
+
+            <!-- フォームを定義 -->
+            <form action="{{ url_for('member.member_plan_list') }}" method="post">
+                <!-- チェックイン日入力欄 -->
+                <div class="form-group">
+                    <div class="form-label">チェックイン日</div>
+                    <div class="form-input">
+                        <!-- チェックイン日入力フィールド -->
+                        <input type="date" name="checkin_date" value="{{ booking.checkin_date }}" />
+                        <!-- エラーメッセージを表示 -->
+                        {% if err_checkin_date %}
+                        <span class="error-message">{{ err_checkin_date }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- チェックアウト日入力欄 -->
+                <div class="form-group">
+                    <div class="form-label">チェックアウト日</div>
+                    <div class="form-input">
+                        <!-- チェックアウト日入力フィールド -->
+                        <input type="date" name="checkout_date" value="{{ booking.checkout_date }}" />
+                        <!-- エラーメッセージを表示 -->
+                        {% if err_checkout_date %}
+                        <span class="error-message">{{ err_checkout_date }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- 宿泊人数選択欄 -->
+                <div class="form-group">
+                    <div class="form-label">宿泊人数</div>
+                    <div class="form-input">
+                        <!-- 宿泊人数選択リスト -->
+                        <select name="guest_count" id="guest_count">
+                            <option value="0">選択してください</option>
+                            {% for guest_count in guest_counts %}
+                            <option value="{{ guest_count }}" {% if booking.guest_count==guest_count %}selected{% endif
+                                %}>
+                                {{ guest_count }}人
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <!-- エラーメッセージを表示 -->
+                        {% if err_guest_count %}
+                        <span class="error-message">{{ err_guest_count }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- 検索ボタン -->
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-edit">空室検索</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- フッターをインクルード -->
+    {% include 'common/member-footer.html' %}
+</body>
+
+</html>

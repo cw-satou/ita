@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- ページのタイトルを設定 -->
+	<title>スタッフログイン</title>
+	<!-- CSSスタイルシートをリンク -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="container">
+		<!-- ヘッダー部分 -->
+		<div class="header">
+			<!-- ログイン画面の見出し -->
+			<h1>スタッフログイン</h1>
+		</div>
+
+		<!-- ログインフォーム -->
+		<form method="post">
+			<!-- ログインフォームのコンテナ -->
+			<div class="login-form">
+				<!-- ログインフォームの説明 -->
+				<h2><label for="tel">IDとパスワードを入力してください</label></h2>
+				<!-- ID入力欄 -->
+				<div class="login-horizon">
+					<label for="loginId">ID</label><input type="text" name="loginId" id="loginId" value=""
+						maxlength="20">
+				</div>
+				<!-- パスワード入力欄 -->
+				<div class="login-horizon">
+					<label for="loginPassword">パスワード</label><input type="password" name="loginPassword"
+						id="loginPassword" value="" maxlength="20">
+				</div>
+				<!-- ログインボタン -->
+				<button type="submit" formaction="{{ url_for('auth.login') }}">ログイン</button>
+				<!-- エラーメッセージを表示 -->
+				{% for message in get_flashed_messages() %}
+				<div class="red">
+					<p>{{ message }}</p>
+				</div>
+				{% endfor %}
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

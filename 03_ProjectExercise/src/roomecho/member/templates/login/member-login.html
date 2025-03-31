@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- 文字コードを指定 -->
+    <meta charset="utf-8">
+    <!-- レスポンシブデザイン用のメタタグ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ページのタイトル -->
+    <title>RoomEcho</title>
+    <!-- Bootstrap CSSを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrapアイコンを読み込む -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- カスタムCSSを読み込む -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- コンテナ -->
+    <div class="container login-container">
+
+        <!-- ロゴ画像を表示 -->
+        <img src="{{ url_for('static', filename='images/RoomEchoLogo.png') }}" alt="ロゴ"
+            class="header-logo-img img-fluid">
+
+        <!-- フォームヘッダ -->
+        <div class="login-header">ExecutiveUrbanHotel</div>
+
+        <!-- ログインフォーム -->
+        <form class="form-login" action="{{ url_for('member.login') }}" method="post">
+            <!-- フォームタイトル -->
+            <h3>ログイン</h3>
+
+            <!-- エラーメッセージを表示 -->
+            {% if err_message %}
+            <div class="error-message">{{ err_message }}</div>
+            {% endif %}
+
+            <!-- メールアドレス入力欄 -->
+            <div class="form-group">
+                <label for="loginId" class="form-label">メールアドレス</label>
+                <input type="text" class="form-input" id="loginId" name="loginId" value="" maxlength="254">
+            </div>
+
+            <!-- パスワード入力欄 -->
+            <div class="form-group">
+                <label for="loginPassword" class="form-label">パスワード</label>
+                <input type="password" class="form-input" id="loginPassword" name="loginPassword" value=""
+                    maxlength="20">
+            </div>
+
+            <!-- ログインボタン -->
+            <div class="btn-group">
+                <button type="submit" class="btn btn-login">ログイン</button>
+            </div>
+
+            <!-- 新規会員登録へのリンク -->
+            <div class="btn-group">
+                <a href="{{ url_for('member.member_add') }}">新規会員登録はこちら</a>
+            </div>
+        </form>
+
+        <!-- フォームヘッダ -->
+        <div class="login-footer">&copy; 2025 Executive UrbanHotel All Rights Reserved.</div>
+
+    </div>
+</body>
+
+</html>

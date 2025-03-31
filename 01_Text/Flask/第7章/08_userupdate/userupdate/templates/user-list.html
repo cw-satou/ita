@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ユーザーリスト</title>
+</head>
+
+<body>
+    <h1>ユーザー一覧</h1>
+
+    <!-- ユーザーデータの一覧表 -->
+    <table>
+        <!-- テーブルのヘッダー -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ユーザー名</th>
+                <th>メールアドレス</th>
+                <th>電話番号</th>
+            </tr>
+        </thead>
+        <!-- ユーザーデータを表示するテーブルのボディ -->
+        <tbody>
+            <!-- usersリストの各userをループして行を作成 -->
+            {% for user in users %}
+            <tr>
+                <td><a href="/users/edit/{{ user.id }}">{{ user.id }}</a></td> <!-- ユーザーIDをクリック可能なリンクとして表示 -->
+                <td>{{ user.name }}</td> <!-- ユーザー名を表示 -->
+                <td>{{ user.email }}</td> <!-- メールアドレスを表示 -->
+                <td>{{ user.phone }}</td> <!-- 電話番号を表示 -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

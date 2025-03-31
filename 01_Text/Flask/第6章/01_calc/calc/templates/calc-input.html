@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ページのタイトル（ブラウザのタブに表示される名前）を指定 -->
+    <title>入力フォーム</title>
+</head>
+
+<body>
+    <!-- ページの見出しを表示 -->
+    <h1>数値の加算</h1>
+
+    <!-- 計算を行うためのフォームを作成 -->
+    <form action="/calculate" method="post">
+        <!-- 1つ目の入力欄（数値1）を作成 -->
+        <div>
+            <!-- 入力欄のラベル（説明文） -->
+            <label for="num1">数値1: </label>
+            <!-- 数値1のテキストボックス -->
+            <input type="text" id="num1" name="num1">
+        </div>
+        <br>
+        <!-- 2つ目の入力欄（数値2）を作成 -->
+        <div>
+            <!-- 入力欄のラベル（説明文） -->
+            <label for="num2">数値2: </label>
+            <!-- 数値2のテキストボックス -->
+            <input type="text" id="num2" name="num2">
+        </div>
+        <br>
+        <!-- 送信ボタン（押すとデータを送信） -->
+        <!-- type="submit" にすることで、ボタンを押した際にフォームが送信される -->
+        <button type="submit">計算</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Instructor Form</title>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="container">
+		{% include 'header.html' %}
+		<!-- エラーメッセージ表示 -->
+		!!!エラーメッセージ!!!
+
+		<!-- インストラクター登録フォーム -->
+		<form method="post">
+			<table>
+				<!-- 氏名入力 -->
+				<tr>
+					<th><label for="fullName">氏名</label></th>
+					<td>
+						<input type="text" name="fullName" id="fullName" maxlength="20">
+						<!-- 氏名入力のエラーメッセージ表示 -->
+					</td>
+				</tr>
+				<!-- ビジネスネーム入力 -->
+				<tr>
+					<th><label for="businessName">ビジネスネーム</label></th>
+					<td>
+						<input type="text" name="businessName" id="businessName" maxlength="20">
+						<!-- ビジネスネーム入力のエラーメッセージ表示 -->
+					</td>
+				</tr>
+				<!-- 分野選択 -->
+				<tr>
+					<th><label for="fieldId">分野</label></th>
+					<td>
+						<select name="fieldId" id="fieldId">
+							<!-- 分野リストの動的生成 -->
+							{% for field in fieldList %}
+								<option value="{{ field.field_id }}">{{ field.field_name }}</option>
+							{% endfor %}
+						</select>
+					</td>
+				</tr>
+				<!-- 経験入力 -->
+				<tr>
+					<th><label for="experience">経験</label></th>
+					<td>
+						<textarea name="experience" id="experience"></textarea>
+						<!-- 経験入力のエラーメッセージ表示 -->
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<button type="submit" formaction="{{ url_for('createInst') }}" class="create-button">登録</button>
+				<button type="submit" formaction="{{ url_for('cancel') }}">キャンセル</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

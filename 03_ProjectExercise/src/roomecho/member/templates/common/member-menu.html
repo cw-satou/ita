@@ -1,0 +1,31 @@
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-expand-lg">
+    <!-- メニュー -->
+    <div class="menu-container">
+        <!-- バンバーガーメニュー用 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- メニューのリスト -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="menu navbar-nav mx-auto">
+                <!-- 宿泊予約リンク -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('member.member_vacancy_list') }}">宿泊予約</a>
+                </li>
+                
+                <!-- 予約確認リンク（未実装） -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">予約確認</a>
+                </li>
+                
+                <!-- マイページリンク（未実装） -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">マイページ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

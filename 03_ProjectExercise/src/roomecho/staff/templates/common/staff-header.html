@@ -1,0 +1,25 @@
+<!-- ヘッダー部分 -->
+<header class="header">
+    <div class="container header-container">
+        <!-- ロゴ画像 -->
+        <div class="header-logo">
+            <!-- メニューページへのリンク -->
+            <a href="{{ url_for('staff.menu') }}">
+                <!-- ロゴ画像を表示 -->
+                <img src="{{ url_for('static', filename='images/RoomEchoLogo.png') }}" alt="ロゴ" class="header-logo-img">
+            </a>
+        </div>
+        
+        <!-- ログイン中のスタッフ名 -->
+        <div class="login-user">
+            <!-- セッションからスタッフ名を取得して表示 -->
+            <span>{{ session["staff_name"] }}</span>
+        </div>
+        
+        <!-- ログアウトボタン -->
+        <div class="header-button">
+            <!-- ログアウトページへのリンク -->
+            <a class="btn btn-logout btn-dark" href="{{ url_for('staff.logout') }}">ログアウト</a>
+        </div>
+    </div>
+</header>

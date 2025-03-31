@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>ユーザーデータ削除</title>
+</head>
+
+<body>
+    <h2>削除内容確認</h2>
+
+    <!-- ユーザー削除の確認フォーム -->
+    <form action="/users/delete" method="post">
+        <input type="hidden" name="id" value="{{ user.id }}"> <!-- ユーザーIDを隠しフィールドとして送信 -->
+
+        <p>ID: <span>{{ user.id }}</span></p> <!-- ユーザーIDを表示 -->
+        <p>ユーザー名: <span>{{ user.name }}</span></p> <!-- ユーザー名を表示 -->
+        <p>メールアドレス: <span>{{ user.email }}</span></p> <!-- メールアドレスを表示 -->
+        <p>電話番号: <span>{{ user.phone }}</span></p> <!-- 電話番号を表示 -->
+
+        <!-- 削除ボタン -->
+        <button type="submit">削除</button>
+    </form>
+
+    <!-- ユーザー一覧ページへ戻るリンク -->
+    <p><a href="/users">キャンセル</a></p>
+</body>
+
+</html>

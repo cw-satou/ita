@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- ブラウザのタブに表示されるページのタイトル -->
+    <title>Result</title>
+</head>
+
+<body>
+    <!-- ページの見出し -->
+    <h2>商品発注を承りました</h2>
+
+    <!-- フォームの開始 -->
+    <form method="post">
+        <!-- 発注者IDの表示（現在ログインしているユーザーのID） -->
+        <p>発注者ID: <span>{{ session['loggedInUser'] }}</span></p>
+
+        <div>
+            <!-- 発注した商品情報を表示 -->
+            <label>＜発注品＞</label><br>
+
+            <!-- 商品名の表示 -->
+            <label>商品：</label>
+            <span>{{ product }}</span><br>
+            <input type="hidden" name="product" value="{{ product }}">
+            <!-- 隠しフィールド（hidden）で商品情報をフォームに保持 -->
+
+            <!-- 数量の表示 -->
+            <label>数量：</label>
+            <span>{{ quantity }}</span><br>
+            <input type="hidden" name="quantity" value="{{ quantity }}">
+            <!-- 隠しフィールド（hidden）で数量情報をフォームに保持 -->
+
+            <!-- 戻るボタン（注文画面に戻る） -->
+            <button type="submit" formaction="/back">戻る</button>
+
+            <!-- ログアウトボタン（ログアウト処理を実行） -->
+            <button type="submit" formaction="/logout">ログアウト</button>
+        </div>
+    </form>
+</body>
+
+</html>
